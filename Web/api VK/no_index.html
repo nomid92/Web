@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1">
+
+    <title>api.vk.com</title>
+	
+	<style type="text/css">
+	  .left{
+	    position: absolute;
+		width: 100px;
+	  }
+	  
+	  .right{
+	    position: relative;
+		left: 100px;
+		width: 15%;
+	  }
+	  
+	  .top{
+	    padding-top: 10px;
+	  }
+	  
+	  .bottom_null{
+	    margin-bottom: 0px;
+	  }
+	  
+	  p{
+	    margin-left: 40px;
+		margin-top: 0px;
+	  }
+	</style>
+	
+
+    <script type="text/javascript">
+	  function setString(){
+	    strlink  = "<a href='https://api.vk.com/method/photos.search?lat=" 
+		      + document.getElementById("shir").value 
+			  + "&long=" + document.getElementById("dolg").value 
+			  + "&count=" + document.getElementById("count").value 
+			  + "&radius=" + document.getElementById("radius").value 
+			  + "&start_time=" + document.getElementById("begin").value 
+			  + "&end_time=" + document.getElementById("end").value
+			  + "'>Просмотреть отобранные фотографии</a>";
+			  
+		document.write(strlink);
+	  }
+    </script>
+  </head>
+
+  <body>
+	<form>
+      <div>
+	    <h3>Введите координаты места сканирования</h3>
+  	  </div>
+	  <div>
+	    <div class="left">
+		  Широта
+	    </div>
+		<div class="right">
+		  <input type="text" id="shir" />
+		</div>
+	  </div>
+	  <div class="top">
+		<div class="left">
+		  Долгота
+		</div>
+		<div class="right">
+		  <input type="text" id="dolg" />
+		</div>
+	  </div>
+	  
+	  <br />
+	  <div>
+		<h3>Введите параметры для отобора фотографий</h3>
+	  </div>
+	  <div>
+		<div class="left">
+		  Количество
+		</div>
+		<div class="right">
+		  <input type="text" id="count" />
+		</div>
+	  </div>
+	  <div class="top">
+		<div class="left">
+		  Радиус
+		</div>
+		<div class="right">
+		  <input type="text" id="radius" />
+		</div>
+	  </div>
+	  
+	  <br />
+	  <div>
+		<h3 class="bottom_null">Введите период времени в миллисекундах</h3>
+		<p>отсчет времени начинается с 1.1.1970</p>
+	  </div>
+	  <div>
+	    <div class="left">
+		  Начало
+	    </div>
+		<div class="right">
+		  <input type="text" id="begin" />
+		</div>
+	  </div>
+	  <div class="top">
+		<div class="left">
+		  Окончание
+		</div>
+		<div class="right">
+		  <input type="text" id="end" />
+		</div>
+	  </div>
+	  <div class="top">
+		<input type="submit" value="Создать ссылку"/>
+	  </div>
+    </form>
+  </body>
+</html>
